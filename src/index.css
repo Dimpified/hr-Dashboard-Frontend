@@ -1,0 +1,79 @@
+/* Import Poppins font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import "flowbite";
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", "sans-serif";
+  --color-primary1: var(--color-white);
+  --color-primary2: hsl(0, 0%, 0%);
+  --color-primary3: hsl(273, 100%, 64%);
+  --color-primary4: hsl(261, 47%, 21%);
+  --color-primary5: hsl(252, 2%, 50%);
+  --color-primary6: hsl(255, 9%, 91%);
+  --color-primary7: hsl(122, 89%, 35%);
+  --color-primary8: hsl(240, 0%, 55%);
+  --color-primary9: hsl(0, 0%, 99%);
+  --color-primary10: hsl(262, 49%, 65%);
+  --color-primary11: hsl(262, 69%, 51%);
+  --color-primary12: hsl(87, 69%, 93%);
+  --color-primary13: hsl(53, 69%, 93%);
+  --color-sec1: hsl(253, 100%, 97%);
+  --color-sec2: hsl(273, 100%, 64%);
+  --color-sec3: hsl(0, 3%, 13%);
+  --color-sec4: hsl(0, 0%, 95%);
+  --color-sec5: hsl(51, 100%, 50%);
+  --color-sec6: hsl(240, 8%, 80%);
+  --color-sec7: hsl(260, 9%, 93%);
+  --color-sec8: hsl(360, 100%, 48%);
+  --color-sec9: hsl(40, 100%, 84%);
+  --color-sec10: hsl(41, 94%, 53%);
+  --color-sec11: hsl(217, 19%, 27%);
+  --color-ter1: hsl(264, 48%, 94%);
+  --color-ter2: hsl(136, 60%, 93%);
+  --color-ter3: hsl(
+    279,
+    100%,
+    32%,
+    4%
+  ); /* Alpha value converted to percentage */
+  --color-ter4: hsl(220, 11%, 34%);
+  --color-ter5: hsl(263, 75%, 92%);
+  --color-ter6: hsl(143, 69%, 30%);
+  --color-ter7: hsl(0, 85%, 42%);
+  --color-ter8: hsl(138, 70%, 45%);
+  --color-ter9: hsl(220, 11%, 34%);
+  --color-ter10: hsl(210, 67%, 94%);
+  --color-ter11: hsl(220, 8%, 44%);
+  --color-ter12: hsl(220, 8%, 44%);
+  --color-ter13: hsl(220, 18%, 26%);
+  --color-ter14: hsl(260, 67%, 95%);
+  --color-ter15: hsl(231, 53%, 78%);
+  --color-grad12: hsl(215, 100%, 47%);
+  --color-grad22: hsl(274, 100%, 62%);
+  --color-grad1: hsl(215, 100%, 47%);
+  --color-grad2: hsl(274, 100%, 62%);
+  --color-warn1: hsl(60, 100%, 94%);
+}
+
+/* Custom CSS to hide scrollbar for Webkit browsers (Chrome, Safari) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit */
+}
+
+/* Custom CSS to hide scrollbar for Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

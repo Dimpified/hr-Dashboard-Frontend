@@ -1,0 +1,45 @@
+// permissions.js
+export const PERMISSIONS = {
+  Sales: {
+    overView: true,
+    userBase: true,
+    subscription: true,
+    transaction: true,
+    supportTicket: false,
+    withdrawal: false,
+  },
+  Finance: {
+    overView: true,
+    userBase: true,
+    subscription: true,
+    transaction: true,
+    supportTicket: false,
+    withdrawal: true,
+  },
+  Product: {
+    overView: true,
+    userBase: true,
+    subscription: true,
+    transaction: true,
+    supportTicket: true,
+    withdrawal: true,
+    subcategory: true,
+    store: true,
+  },
+  CustomerCare: {
+    overView: true,
+    userBase: true,
+    subscription: true,
+    transaction: true,
+    supportTicket: true,
+    withdrawal: true,
+  },
+  Admin: {
+    overView: true,
+    userBase: true,
+    subscription: true,
+    transaction: true,
+    supportTicket: true,
+    withdrawal: true,
+  },
+};
