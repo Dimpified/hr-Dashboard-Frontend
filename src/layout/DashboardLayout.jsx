@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/DIMP logo colored.png";
@@ -9,23 +9,14 @@ import cashImg from "../assets/cash.svg";
 import ticketImg from "../assets/ticket.svg";
 import subscriptionImg from "../assets/subscription.svg";
 import logOutImg from "../assets/SignOut.svg";
-import withdrawalImg from "../assets/withdrawIcon.svg";
-import NotificationIcon from "../assets/notification.svg";
-import ThemeSwitchIcon from "../assets/themeswitch.svg";
 import { Heading, TextSpan } from "../component/Text";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import subcategoryimg from "../assets/subcategory.svg";
-import storeimg from "../assets/store.svg";
-import { IoIosSearch } from "react-icons/io";
-// import api from "../../api/DashboardApi";
 import Avatar from "../assets/person.png";
-import { LongInputWithPlaceholder } from "../component/Inputs";
 import { RiMenu3Line } from "react-icons/ri";
 import { MdCancel, MdOutlineCancel } from "react-icons/md";
 import { logout } from "../features/authentication";
-import { PERMISSIONS } from "../component/Permission";
 import api from "../api/dashboardApi";
 import { lowerSteps } from "../data/constant";
 
@@ -163,20 +154,14 @@ const DashboardLayout = ({ children }) => {
         } bg-sec1 border-r border-gray-200 flex flex-col`}
       >
         {/* Logo */}
-        <div
-          className={`pb-6 ${
-            isSidebarOpen
-              ? "flex justify-center mt-4"
-              : "flex justify-center mt-5"
-          }`}
-        >
+        <div className={`flex justify-center pb-2 border-b-2 border-primary6`}>
           {isSidebarOpen ? (
             <>
               <Link to="/admin/dashboard">
                 <img
                   src={Logo}
                   alt="Logo"
-                  className={`transition-all duration-300 ${
+                  className={`transition-all duration-300 place-self-center ${
                     isSidebarOpen ? "w-11" : "hidden"
                   }`}
                 />
@@ -185,7 +170,7 @@ const DashboardLayout = ({ children }) => {
           ) : (
             <button
               onClick={toggleSidebar}
-              className="flex items-center text-xl"
+              className="flex items-center text-xl my-4"
             >
               <RiMenu3Line size={25} />
             </button>
@@ -193,7 +178,7 @@ const DashboardLayout = ({ children }) => {
         </div>
 
         {/* Sidebar Links */}
-        <div className="flex-grow flex flex-col items-start space-y-4">
+        <div className="flex-grow flex flex-col mt-3 items-start space-y-1">
           {steps.map((step, index) => {
             const isActive = step.isActive
               ? step.isActive(location.pathname)
@@ -450,7 +435,7 @@ const DashboardLayout = ({ children }) => {
               <img
                 src={Logo}
                 alt="Logo"
-                className={`transition-all duration-300 w-24`}
+                className={`transition-all duration-300 w-9`}
               />
             </Link>
             <button

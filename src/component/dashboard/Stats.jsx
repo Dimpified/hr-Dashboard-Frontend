@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import StatsCard from "../card/StatsCard";
 import { useSelector } from "react-redux";
 import api from "../../api/dashboardApi";
-import Skeleton from "../ui/Skeleton";
+
 
 const Stats = () => {
-  const user = useSelector((state) => state?.auth?.user?.profileData);
   const userDepartment = useSelector((state) => state?.auth?.user?.department);
   const userEmail = useSelector((state) => state?.auth?.user?.email);
   const { accessToken, refreshToken } = useSelector((state) => state.auth);

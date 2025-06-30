@@ -7,12 +7,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { ButtonLongPurple } from "../../component/Buttons";
 import { LongInputWithPlaceholder } from "../../component/Inputs";
 import { Heading, Text } from "../../component/Text";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { adminLogin } from "../../features/authentication";
 import { showToast } from "../../component/ShowToast";
 import { LabelImportant } from "../../component/Label";
 import { useState } from "react";
-import { FaSpinner } from "react-icons/fa";
+import { FaSpinner, FaEye, FaEyeSlash } from "react-icons/fa";
 
 // Define the Yup validation schema
 const schema = yup.object().shape({
@@ -29,8 +29,9 @@ const schema = yup.object().shape({
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const { isLoading, error, user } = useSelector((state) => state.auth);
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   // Set up the form with react-hook-form
   const {
     register,
@@ -43,7 +44,6 @@ const Login = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      // Dispatch the login action
       const resultAction = await dispatch(
         adminLogin({
           email: data.email,
@@ -66,7 +66,6 @@ const Login = () => {
         }
       }
     } catch (error) {
-      // Handle unexpected errors, such as network issues
       showToast("An unexpected error occurred. Please try again.");
     } finally {
       setIsLoading(false);
@@ -120,18 +119,24 @@ const Login = () => {
               </div>
 
               {/* Password Field */}
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 <LabelImportant className="block text-gray-700">
                   Password
                 </LabelImportant>
                 <LongInputWithPlaceholder
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   className={`mt-2 focus:ring-1 focus:ring-primary11 ${
                     errors.password ? "border-red-500" : ""
                   }`}
                   {...register("password")}
                 />
+                <span
+                  className="absolute right-3 top-13 cursor-pointer text-primary5"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
                 {errors.password && (
                   <p className="text-red-500 text-sm mt-1">
                     {errors.password.message}
@@ -147,16 +152,6 @@ const Login = () => {
                   Forgot Password?
                 </Link>
               </div>
-
-              {/* <Text className="mt-16 mb-5 text-center text-gray-600">
-                Don&apos;t have an account?{" "}
-                <Link
-                  to="/auth/personal-Information"
-                  className="text-primary11 hover:underline"
-                >
-                  Sign Up
-                </Link>
-              </Text> */}
 
               {isLoading ? (
                 <ButtonLongPurple

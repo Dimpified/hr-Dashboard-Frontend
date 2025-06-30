@@ -1,14 +1,23 @@
+import { useSelector } from "react-redux";
 import { TextSpan } from "../Text";
 
 const StatsCard = ({ title, value, position }) => {
+  const userRole = useSelector((state) => state?.auth?.user?.role);
+
   const colorChange = (position) => {
     switch (position) {
       case "1":
-        return "bg-linear-to-tr from-[#2C3387] to-[#180E2B]";
+        return `bg-linear-to-tr ${
+          userRole === "group-hr" ? "from-[#FF94AE]" : "from-[#2C3387]"
+        } to-[#180E2B]`;
       case "2":
-        return "bg-linear-to-tr from-[#C9C42A] to-[#100F01]";
+        return `bg-linear-to-tr ${
+          userRole === "group-hr" ? "from-[#2AC9C9]" : "from-[#C9C42A]"
+        }  to-[#100F01]`;
       case "3":
-        return "bg-linear-to-tr from-[#008361] to-[#004D3A]";
+        return `bg-linear-to-tr ${
+          userRole === "group-hr" ? "from-[#B2CD80]" : "from-[#008361]"
+        }  to-[#004D3A]`;
       default:
         return "bg-linear-to-tr from-sec10 to-sec11";
     }
